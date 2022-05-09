@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="accountTab"
+        android:title="계정 설정" />
+
+    <Preference
+        android:key="accountInfo"
+        android:title="계정 정보 보기"/>
+
+    <EditTextPreference
+        android:key="changeNickname"
+        android:title="닉네임 설정"/>
+
+    <PreferenceCategory
+        android:key="notiTab"
+        android:title="알림 설정"/>
+
+    <CheckBoxPreference
+        android:key="notification"
+        android:title="알림"
+        android:summary="앱 알림을 받으려면 선택해주세요."/>
+
+    <SwitchPreference
+        android:key="vibration"
+        android:title="진동"
+        android:summary="알림이 오면 진동이 울립니다."/>
+
+
+</PreferenceScreen>
