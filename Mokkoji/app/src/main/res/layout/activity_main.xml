@@ -1,106 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="#ffe302"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFE302"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/home_layout"/>
 
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/mjcLogo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="65dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@mipmap/ic_launcher_round"/>
-
-    <TextView
-        android:id="@+id/mjcText"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:text="자취인들의 커뮤니티, 모꼬지"
-        android:textColor="#000000"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mjcLogo" />
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottomMenu"
+        android:backgroundTint="#DFF4C7"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_menu"/>
 
-
-    <EditText
-        android:layout_width="290dp"
-        android:layout_height="35dp"
-        android:background="#ffe302"
-        android:hint="ID"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/idEdit"
-        android:drawableStart="@drawable/ic_baseline_account_circle_24"/>
-
-    <EditText
-        android:layout_width="290dp"
-        android:layout_height="35dp"
-        android:background="#ffe302"
-        android:hint="PASSWD"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/idEdit"
-        android:layout_margin="10dp"
-        android:drawableStart="@drawable/lock"
-        android:id="@+id/pwEdit"/>
-
-    <Button
-        android:layout_width="290dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#ffe302"
-        android:text="로그인"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/pwEdit"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/loginBtn"/>
-
-    <ImageButton
-        android:layout_width="290dp"
-        android:layout_height="50dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginBtn"
-        android:id="@+id/kakaoLogin"
-        android:src="@drawable/kakao_login_medium_wide"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="회원가입"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/kakaoLogin"
-        android:id="@+id/signupBtn"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="250dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
